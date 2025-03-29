@@ -27,7 +27,15 @@ function sortTableByColumn(columnIndex) {
       ? Number(cellB.replace(/[$,]/g, ''))
       : cellB.toLowerCase();
 
-    return valueA > valueB ? 1 : -1;
+    if (valueA > valueB) {
+      return 1;
+    }
+
+    if (valueA < valueB) {
+      return -1;
+    }
+
+    return 0;
   });
 
   tbody.innerHTML = '';
